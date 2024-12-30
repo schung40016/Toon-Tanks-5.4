@@ -23,13 +23,13 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	class ATank* Tank;
-
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	float FireRange = 300.f;
 
 	FTimerHandle FireRateTimerHandle;
 	float FireRate = 2.f;
+
+	class ATank* Tank;
 
 	void CheckFireCondition();
 

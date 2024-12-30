@@ -15,6 +15,8 @@ class TOONTANKS_API ATank : public ABasePawn
 	GENERATED_BODY()
 
 public:
+	bool bAlive = true;
+
 	ATank();
 
 	// Called to bind functionality to input
@@ -26,8 +28,6 @@ public:
 	void HandleDestruction();
 
 	APlayerController* GetTankPlayerController() const;
-
-	bool bAlive = true;
 
 protected:
 	// Called when the game starts or when spawned
@@ -46,9 +46,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float TurnSpeed = 10.f;
 
+	APlayerController* TankPlayerController;
+
 	void Move(float Value);
 
 	void Turn(float value);
-
-	APlayerController *TankPlayerController;
 };
